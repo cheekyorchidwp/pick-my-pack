@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lucky Draw</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+background: linear-gradient(135deg, #ff0099, #493240);
+color: white;
+margin-top: 100px;
+}
+ 
+.card {
+background: white;
+color: black;
+width: 350px;
+margin: auto;
+padding: 30px;
+border-radius: 20px;
+box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+ 
+.number {
+font-size: 100px;
+font-weight: bold;
+color: #ff0099;
+}
+ 
+.emoji {
+font-size: 80px;
+}
+</style>
+</head>
+<body>
+ 
+<div class="card">
+<h1>🎉 Your Lucky Number 🎉</h1>
+<div id="emoji" class="emoji"></div>
+<div id="number" class="number"></div>
+</div>
+ 
+<script>
+const number = Math.floor(Math.random() * 6) + 1;
+ 
+const emojis = {
+1: "🍀",
+2: "🎁",
+3: "⭐",
+4: "🚀",
+5: "💎",
+6: "🏆"
+};
+ 
+document.getElementById("number").innerText = number;
+document.getElementById("emoji").innerText = emojis[number];
+</script>
+ 
+</body>
+</html>

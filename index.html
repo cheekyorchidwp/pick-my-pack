@@ -1,69 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
- 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pick My Pack</title>
+
 <style>
-body {
-font-family: Arial, sans-serif;
-background: linear-gradient(135deg, #ff0099, #6a11cb);
-min-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 0;
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
 }
- 
-.card {
-background: white;
-width: 450px;
-padding: 30px;
-border-radius: 20px;
-text-align: center;
-box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
+#resultImage {
+    width: 100vw;
+    height: auto;
+    display: block;
 }
- 
-img {
-width: 100%;
-border-radius: 15px;
-margin-bottom: 20px;
-}
- 
-h1 {
-color: #333;
-}
- 
-p {
-font-size: 20px;
-color: #666;
-}
+
 </style>
+
 </head>
- 
+
 <body>
- 
-<div class="card">
-<h1>🎉 TEST! 🎉</h1>
- 
-<img id="resultImage" src="" alt="Photo">
- 
-<p id="resultText"></p>
-</div>
- 
+
+<img id="resultImage" src="" alt="">
 
 <script>
 
-const results = [
-{
-    image: "photo1.png",
- }
+const images = [
+    "photo1.png",
+    "photo1.png",
+    "photo1.png",
+    "photo1.png",
+    "photo1.png",
+    "photo1.png",
+    "photo1.png",
+    "photo1.png",
+    "photo1.png",
+    "photo1.png",
+    "photo1.png",
+    "photo1.png"
 ];
 
-const randomResult = results[0];
+const randomImage =
+    images[Math.floor(Math.random() * images.length)];
 
-document.getElementById("resultImage").src = randomResult.image;
-document.getElementById("resultText").innerText = randomResult.text;
+document.getElementById("resultImage").src = randomImage;
 
 </script>
- 
+
 </body>
 </html>

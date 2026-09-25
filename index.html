@@ -49,56 +49,21 @@ color: #666;
 <p id="resultText"></p>
 </div>
  
+
 <script>
- 
+
 const results = [
 {
-image: "cheeky sticky 1.png",
-},
-{
-image: "cheeky sticky 1.png"
-},
-{
-image: "cheeky sticky 1.png"
-},
-{
-image: "cheeky sticky 1.png"
-},
-{
-image: "cheeky sticky 1.png"
-},
-{
-image: "cheeky sticky 1.png"
-},
-{
-image: "cheeky sticky 1.png"
-},
-{
-image: "cheeky sticky 1.png"
-},
-{
-image: "cheeky sticky 1.png"
-},
-{
-image: "cheeky sticky 1.png"
-},
-{
-image: "cheeky sticky 1.png"
-},
-{
-image: "cheeky sticky 1.png"
+    image: "photo1.jpg",
+    text: "This is photo 1"
 }
 ];
- 
-const randomResult =
-results[Math.floor(Math.random() * results.length)];
- 
-document.getElementById("resultImage").src =
-randomResult.image;
- 
-document.getElementById("resultText").innerText =
-randomResult.text;
- 
+
+const randomResult = results[0];
+
+document.getElementById("resultImage").src = randomResult.image;
+document.getElementById("resultText").innerText = randomResult.text;
+
 </script>
  
 </body>

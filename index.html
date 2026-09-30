@@ -33,27 +33,42 @@ border-radius: 15px;
 <img id="resultImage" src="" alt="">
 
 <script>
-
+ 
 const images = [
-    "spooky.gif",
-    "commie.gif",
-    "chibidisco.gif",
-    "babydigimon.gif",
-    "hollowsong.gif",
-    "legsfordays.gif",
-    "pokenomz.gif",
-    "quintisetinallyqueer.gif",
-    "digibabies.gif",
-    "randomonium.gif",
-    "triangleguy.gif",
-    "sootspirits.gif"
+{ file: "commie.gif", weight: 18 },
+{ file: "hollowsong.gif", weight: 16 },
+{ file: "triangleguy.gif", weight: 14 },
+{ file: "chibidisco.gif", weight: 12 },
+{ file: "legsfordays.gif", weight: 10 },
+{ file: "babydigimon.gif", weight: 8 },
+{ file: "spooky.gif", weight: 7 },
+{ file: "quintisetinallyqueer.gif", weight: 5 },
+{ file: "pokenomz.gif", weight: 4 },
+{ file: "digibabies.gif", weight: 3 },
+{ file: "sootspirits.gif", weight: 2 },
+{ file: "randomonium.gif", weight: 1 }
 ];
-
-const randomImage =
-    images[Math.floor(Math.random() * images.length)];
-
-document.getElementById("resultImage").src = randomImage;
-
+ 
+// Calculate total weight
+const totalWeight = images.reduce(
+(sum, item) => sum + item.weight,
+0
+);
+ 
+// Pick weighted random image
+let random = Math.random() * totalWeight;
+let selectedImage;
+ 
+for (const item of images) {
+random -= item.weight;
+if (random < 0) {
+selectedImage = item.file;
+break;
+}
+}
+ 
+document.getElementById("resultImage").src = selectedImage;
+ 
 </script>
 
 </body>
